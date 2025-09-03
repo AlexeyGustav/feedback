@@ -46,16 +46,29 @@
         method: 'POST',
         body: formData
       })
-      .then(response => response.json())
+      .then(response => {
+        // Проверяем тип контента
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          return response.json();
+        } else {
+          // Если получили не JSON, читаем как текст для отладки
+          return response.text().then(text => {
+            console.error('Получен не JSON ответ:', text);
+            throw new Error('Сервер вернул не JSON ответ');
+          });
+        }
+      })
       .then(data => {
         if (data.code === 1) {
-          document.getElementById('message').innerHTML = '<p style="color: green;">Сообщение отправлено успешно!</p>';
-          this.reset();
+          document.getElementById('message').innerHTML = '<p style="color: green;">' + (data.message || 'Сообщение отправлено успешно!') + '</p>';
+          document.getElementById('feedbackForm').reset();
         } else {
-          document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка отправки: ' + (data.error || 'Неизвестная ошибка') + '</p>';
+          document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка: ' + (data.error || 'Неизвестная ошибка') + '</p>';
         }
       })
       .catch(error => {
+        console.error('Ошибка:', error);
         document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка: ' + error.message + '</p>';
       });
     });
