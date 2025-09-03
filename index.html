@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Feedback Form</title>
+</head>
+<body>
+  <section class="section section-feedback">
+    <div class="m-container">
+      <div class="feedback-container">
+        <h2>Свяжитесь с нами</h2>
+        <p>Пожалуйста, отправьте свое сообщение с помощью этой формы:</p>
+
+        <form id="feedbackForm" method="post" action="feedback.php">
+          <div class="form-row plane-right">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="form-row plane-left">
+            <input type="text" name="name" placeholder="Имя" required />
+          </div>
+
+          <div class="form-row">
+            <textarea name="question" placeholder="Сообщение" required></textarea>
+          </div>
+
+          <div class="buttons">
+            <input type="submit" name="send" value="Отправить" class="btn" />
+          </div>
+        </form>
+        
+        <div id="message"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      
+      fetch('feedback.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.code === 1) {
+          document.getElementById('message').innerHTML = '<p style="color: green;">Сообщение отправлено успешно!</p>';
+          this.reset();
+        } else {
+          document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка отправки: ' + (data.error || 'Неизвестная ошибка') + '</p>';
+        }
+      })
+      .catch(error => {
+        document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка: ' + error.message + '</p>';
+      });
+    });
+  </script>
+</body>
+</html>

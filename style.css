@@ -1,0 +1,216 @@
+section.section-feedback {
+  background-image: url(./feedback-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 100;
+}
+section.section-feedback .m-container {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+section.section-feedback .m-container .feedback-container {
+  font-size: 22px;
+  color: white;
+  width: 712px;
+  margin: 0 auto;
+  transform: translateX(-60px);
+}
+section.section-feedback .m-container .feedback-container h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: white;
+}
+section.section-feedback .m-container .feedback-container h2,
+section.section-feedback .m-container .feedback-container p {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+section.section-feedback .m-container .feedback-container input,
+section.section-feedback .m-container .feedback-container textarea {
+  background-color: transparent;
+  padding: 12px 24px;
+  font-size: 20px;
+  color: #35353e;
+  outline: none;
+  border: none;
+  resize: none;
+  width: 100%;
+}
+section.section-feedback .m-container .feedback-container input::placeholder,
+section.section-feedback .m-container .feedback-container textarea::placeholder {
+  color: #35353e;
+}
+section.section-feedback .m-container .feedback-container textarea {
+  height: 160px;
+}
+section.section-feedback .m-container .feedback-container form {
+  margin: 60px 0 0;
+}
+section.section-feedback .m-container .feedback-container form .form-row {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  position: relative;
+}
+section.section-feedback .m-container .feedback-container form .form-row input {
+  padding-left: 24px;
+}
+section.section-feedback .m-container .feedback-container form .form-row.plane-right {
+  width: 942px;
+}
+section.section-feedback .m-container .feedback-container form .form-row.plane-right::after {
+  position: absolute;
+  left: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  display: block;
+  width: 120px;
+  height: 101px;
+  background-image: url(./plane.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.section-feedback .m-container .feedback-container form .form-row.plane-left {
+  width: 812px;
+  left: -100px;
+}
+section.section-feedback .m-container .feedback-container form .form-row.plane-left input {
+  padding-left: 124px;
+}
+section.section-feedback .m-container .feedback-container form .form-row.plane-left::after {
+  position: absolute;
+  right: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  content: "";
+  display: block;
+  width: 120px;
+  height: 101px;
+  background-image: url(./plane.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.section-feedback .m-container .feedback-container form .buttons {
+  text-align: right;
+  padding-top: 15px;
+}
+section.section-feedback .m-container .feedback-container form .buttons .btn {
+  font-size: 25px;
+  color: #282e38;
+  padding: 12px 36px;
+  display: inline-block;
+  width: auto;
+  background-color: #d8ff9a;
+  border-radius: 50px;
+}
+@media screen and (max-width: 1439px) {
+  section.section-feedback .m-container {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  section.section-feedback .m-container .feedback-container {
+    width: 484px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-right {
+    width: 684px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left {
+    width: 564px;
+    left: -80px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left input {
+    padding-left: 104px;
+  }
+}
+@media screen and (max-width: 1068px) {
+  section.section-feedback .m-container {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  section.section-feedback .m-container .feedback-container {
+    width: 340px;
+    transform: translateX(-40px);
+  }
+  section.section-feedback .m-container .feedback-container h2,
+  section.section-feedback .m-container .feedback-container p {
+    width: 460px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-right {
+    width: 460px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-right::after {
+    width: 60px;
+    height: 50px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left {
+    width: 380px;
+    left: -40px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left input {
+    padding-left: 64px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left::after {
+    width: 60px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 689px) {
+  section.section-feedback .m-container {
+    padding-top: 30px;
+    padding-bottom: 45px;
+  }
+  section.section-feedback .m-container .feedback-container {
+    padding-left: 22px;
+    padding-right: 22px;
+    width: 100%;
+    transform: none;
+  }
+  section.section-feedback .m-container .feedback-container h2 {
+    font-size: 32px;
+  }
+  section.section-feedback .m-container .feedback-container p {
+    font-size: 18px;
+  }
+  section.section-feedback .m-container .feedback-container h2,
+  section.section-feedback .m-container .feedback-container p {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section.section-feedback .m-container .feedback-container form {
+    margin: 45px 0 0;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-right {
+    width: 100%;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-right::after {
+    display: none;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left {
+    width: 100%;
+    left: 0;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left input {
+    padding-left: 24px;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row.plane-left::after {
+    display: none;
+  }
+  section.section-feedback .m-container .feedback-container form .form-row input,
+  section.section-feedback .m-container .feedback-container form .form-row textarea {
+    font-size: 16px;
+  }
+  section.section-feedback .m-container .feedback-container form .buttons {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 369px) {
+  section.section-feedback .m-container .feedback-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
